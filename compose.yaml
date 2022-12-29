@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  django_gunicorn:
+    volumes:
+      - static:/static
+    env_file:
+      - .env
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+
+volumes:
+  static:
+  data-db:

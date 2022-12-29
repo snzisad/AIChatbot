@@ -1,0 +1,7 @@
+Django==4.1.4
+gunicorn==20.1.0
+openai==0.25.0
+sqlparse==0.2.4
+djangorestframework==3.14.0
+python-dotenv==0.21.0
+
