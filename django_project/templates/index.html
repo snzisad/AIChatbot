@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    
+        {% load static %}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+
+        <style>
+            .FixedHeightContainer{
+                height: 95vh;
+                padding:3px; 
+            }
+            .Content{
+                height: 85vh;
+                overflow:auto;
+                background:#fff;
+            }
+            .flex-row-reverse{
+                margin: 5px;
+            }
+            @media screen and (max-width: 600px){
+                .FixedHeightContainer{
+                    height: 75vh;
+                }
+                .mt-5{
+                    margin-top: 5px !important;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container d-flex justify-content-center FixedHeightContainer">
+            <div class="card mt-5">
+                <div class="d-flex flex-row justify-content-between p-3 adiv text-white">
+                    <i class=""></i>
+                    <span class="pb-3">Chat with AI</span>
+                    <i class=""></i>
+                </div>
+                <div class="Content">
+                </div>
+                
+                <div class="form-group px-3" style="margin-top: 10px;margin-bottom: 10px !important;">
+                    <input class="form-control" id="message_box" placeholder="Type your message and press enter"/>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{% static 'main.js' %}"></script>
+    </body>
+</html>
+
+
+
+ <!-- <style>
+    .FixedHeightContainer
+    {
+    float:right;
+    height: 100vh;
+    width:250px; 
+    padding:3px; 
+        background:#f00;
+    }
+    .Content
+    {
+    height: 85vh;
+    overflow:auto;
+        background:#fff;
+    }
+ </style>
+-->

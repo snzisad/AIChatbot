@@ -4,7 +4,7 @@ from rest_framework import viewsets
 from .serializers import ConversationSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import redirect, render
 import uuid
 import os
 import openai
@@ -19,10 +19,15 @@ class ConversationViewSet(viewsets.ModelViewSet):
 
 
 def home(request):
-    load_dummy_data()
+    return render(request, "index.html", {"expenses" : "Hello"})
 
-    conversation_list = ConversationHistory.objects.all().order_by("datetime").values()
-    return Response({"data": list(conversation_list)})
+
+    # load_dummy_data()
+    print(generate_prompt("token", "message"))
+
+    # conversation_list = ConversationHistory.objects.all().order_by("datetime").values()
+    # return Response({"data": list(conversation_list)})
+    return HttpResponse("Congratulations!! Your server is working perfectly")
 
 @api_view(['POST'])
 def getMessage(request):
