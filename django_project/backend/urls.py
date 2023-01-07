@@ -16,6 +16,8 @@ Including another URLconf
 from django.urls import path, include
 from .home import views
 from rest_framework import routers
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 router = routers.DefaultRouter()
 router.register(r'conversation', views.ConversationViewSet)
@@ -25,3 +27,6 @@ urlpatterns = [
     path("api/message", views.getMessage, name="get_message"),
     path('api/', include(router.urls)),
 ]
+
+# for gunicorn static files
+urlpatterns += staticfiles_urlpatterns() 
