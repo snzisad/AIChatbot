@@ -50,3 +50,6 @@ Stop the docker that is running in the background
 ```bash
 sudo docker compose down
 ```
+
+## Screenshot
+![User Interface](./Screenshot.png)
